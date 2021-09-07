@@ -1,0 +1,115 @@
+<head>
+
+</head>
+
+<body>
+    <div id="header">
+        <h1>
+            Bruno Pauluci Reinato 11031638
+        </h1>
+    </div>
+    <div id="about-eating">
+        <p class="eatingText">
+            Breakfast is often called ‘the most important meal of the day’, and for good reason. As the name suggests,
+            breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy
+            levels and alertness, while also providing other essential nutrients required for good health.
+
+            Many studies have shown the health benefits of eating breakfast. It improves your energy levels and ability
+            to concentrate in the short term, and can help with better weight management, reduced risk of type 2
+            diabetes and heart disease in the long term.
+
+            Despite the benefits of breakfast for your health and wellbeing, many people often skip it, for a variety of
+            reasons. The good news is there are plenty of ways to make it easier to fit breakfast into your day.
+        </p>
+        <a href="https://www.betterhealth.vic.gov.au/health/healthyliving/breakfast" class="aboutBreakfast">
+            <p>
+                Source and 'see more'
+            </p>
+        </a>
+    </div>
+    <h3>
+        Have a good morning with this amazing (and healthy) breakfast!
+    </h3>
+    <div id="staticImages">
+        <a href="https://en.wikipedia.org/wiki/Toast_(food)">
+            <img src="https://www.collinsdictionary.com/images/full/toast_102709511.jpg" width='300' , heigth='300' />
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Margarine">
+            <img src="https://a-static.mlcdn.com.br/618x463/margarina-qualy-com-sal-500g/centraldeembalagens/26535p/38b262381b683d5dfdeb2ae021ec197a.jpg"
+                width='300' , heigth='300' />
+        </a>
+        <br>
+        <a href="https://en.wikipedia.org/wiki/Coffee">
+            <img src="https://alfaporcelanas.com.br/wp-content/uploads/2021/04/BEN_279_1_1000x1000_5790ff74c0d2ac9e1aa7432fa1af5896.jpg"
+                width='300' , heigth='300' />
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Egg">
+            <img src="https://s2.glbimg.com/-3gVq-_w-zBEgZlnty0-HVhr00w=/0x0:237x212/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2014/01/23/22_16_39_163_images.jpg"
+                width='300' , heigth='300' />
+        </a>
+    </div>
+    <span>you may click on them :D</span>
+    <br><br><br>
+    <div id="dynamicGifs">
+        <h3>
+            If you wanna see how these was made, click on the button below!
+        </h3>
+        <button class="buttonClass">
+            this is the button below
+        </button>
+        <br>
+        <script>
+            const butao = document.querySelector('.buttonClass'),
+                imageArray = ["https://i.gifer.com/92NZ.gif",
+                    "https://c.tenor.com/y3i9_ejvIycAAAAM/kerrygold-butter.gif",
+                    "https://i.pinimg.com/originals/75/68/56/756856afc1452c9bd05b8932b7916e79.gif",
+                    "https://i.gifer.com/L707.gif"],
+                wikiArray = ["https://en.wikipedia.org/wiki/Toaster",
+                    "https://en.wikipedia.org/wiki/Margarine",
+                    "https://en.wikipedia.org/wiki/Coffee_filter",
+                    "https://en.wikipedia.org/wiki/Frying_pan"];
+            window.cont = window.cont || 1;
+
+            imageArray[9] = 'https://i.gifer.com/origin/9c/9ce3596dd20154eebd7c530d60225666.gif'
+            wikiArray[9] = 'https://en.wikipedia.org/wiki/Eating'
+
+            butao.addEventListener('click', function () {
+                let imgsHere = document.querySelector('#dynamicGifs');
+
+                if (window.cont == 5) {
+                    let textElem = document.createElement('h4'),
+                        newText = document.createTextNode('Now you can eat it!');
+                    textElem.appendChild(newText);
+                    imgsHere.appendChild(textElem);
+                    window.cont++
+                    return;
+                }
+                if (window.cont > 5 && window.cont != 10) {
+                    cont++
+                    return
+                }
+                let imgElem = document.createElement('img'),
+                    lineBreak = document.createElement('br'),
+                    hrefElem = document.createElement('a')
+                imgElem.id = "random_gif";
+                imgElem.src = imageArray[window.cont - 1];
+                hrefElem.setAttribute('href', wikiArray[window.cont - 1]);
+                imgElem.setAttribute('width', window.cont < 5 ? '300' : '600');
+                imgElem.setAttribute('height', window.cont < 5 ? '150' : '300')
+                hrefElem.appendChild(imgElem)
+                if (window.cont % 2 != 0)
+                    imgsHere.appendChild(lineBreak)
+                imgsHere.appendChild(hrefElem)
+                cont++
+            })
+        </script>
+    </div>
+
+    <div id="aboutMe">
+        <p>
+            Sou de Jaú-SP. Em 2016, entrei na UFSCar no curso de bacharelado em matemática, mas transferi para a
+            matemática aplicada do ICMC na metade de 2018.
+            Atualmente trabalho na Raccoon Marketing Digital, na área de Data Layer.
+        </p>
+    </div>
+</body>
