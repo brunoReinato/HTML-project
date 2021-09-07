@@ -1,5 +1,7 @@
 <head>
-
+    <title>
+        Breakfast 11031638
+    </title>
 </head>
 
 <body>
@@ -55,8 +57,11 @@
             If you wanna see how these was made, click on the button below!
         </h3>
         <button class="buttonClass">
-            this is the button below
+            Button below
         </button>
+        <span class="hiddenMessage" style= "visibility: hidden;">
+            Oh looks like you've unlocked another button
+        </span>
         <br>
         <script>
             const butao = document.querySelector('.buttonClass'),
@@ -70,8 +75,8 @@
                     "https://en.wikipedia.org/wiki/Frying_pan"];
             window.cont = window.cont || 1;
 
-            imageArray[9] = 'https://i.gifer.com/origin/9c/9ce3596dd20154eebd7c530d60225666.gif'
-            wikiArray[9] = 'https://en.wikipedia.org/wiki/Eating'
+            //imageArray[9] = 'https://i.gifer.com/origin/9c/9ce3596dd20154eebd7c530d60225666.gif'
+            //wikiArray[9] = 'https://en.wikipedia.org/wiki/Eating'
 
             butao.addEventListener('click', function () {
                 let imgsHere = document.querySelector('#dynamicGifs');
@@ -84,8 +89,11 @@
                     window.cont++
                     return;
                 }
-                if (window.cont > 5 && window.cont != 10) {
+                if (window.cont > 5){// && window.cont != 10) {
                     cont++
+                    document.querySelector('.reveal').style.visibility = 'visible'
+                    document.querySelector('.hiddenMessage').style.visibility = 'visible'
+                    butao.remove()
                     return
                 }
                 let imgElem = document.createElement('img'),
@@ -101,6 +109,28 @@
                     imgsHere.appendChild(lineBreak)
                 imgsHere.appendChild(hrefElem)
                 cont++
+            })
+        </script>
+
+    </div>
+    <div id="hiddenStuff">
+        <a href = "https://en.wikipedia.org/wiki/Eating" style= "visibility: hidden;">
+            <img src="https://i.gifer.com/origin/9c/9ce3596dd20154eebd7c530d60225666.gif" style= "visibility: hidden;" height="0" width="0"/>
+        </a>
+        <br>
+        <button class="reveal" style="visibility: hidden;">
+            Eat with me
+        </button>
+        <script>
+            const revealButton = document.querySelector('.reveal')
+            revealButton.addEventListener('click', function(){
+                let hiddenArray = Array.from(document.querySelectorAll('[style*="hidden"]'));
+                hiddenArray.forEach((elem) => {
+                    elem.style.visibility = 'visible'
+                    elem.setAttribute('width', '600')
+                    elem.setAttribute('height', '300')
+                });
+                revealButton.style.visibility = 'hidden'
             })
         </script>
     </div>
